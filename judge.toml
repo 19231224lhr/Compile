@@ -1,0 +1,6 @@
+[jobs.test-submit]
+image = { source = "dockerfile", path = "."}
+
+run = [
+  "java -cp dst/ Main < $input",
+]
