@@ -263,6 +263,10 @@ public class Main {
                             test = true;
                             System.out.print("Ident(" + c);
                             k++;
+                            if (k == length) {
+                                System.out.println(")");
+                                break;
+                            }
                             c = line.charAt(k);
                             while (judge.indexOf(c) != -1) {
                                 System.out.print(c);
