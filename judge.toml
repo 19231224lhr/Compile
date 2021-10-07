@@ -1,6 +1,6 @@
-[jobs.test-submit]
+[jobs.lexer]
 image = { source = "dockerfile", path = "."}
 
 run = [
-  "java -cp dst/ Main < $input",
+  "java Main $input",
 ]
