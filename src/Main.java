@@ -277,6 +277,10 @@ public class Main {
                         test = true;
                         k++;
                     }
+                    if (c == '\t') {
+                        test = true;
+                        k++;
+                    }
                     if (!test) {
                         System.out.println("Err");
                         break;
