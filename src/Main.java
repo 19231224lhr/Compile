@@ -253,7 +253,7 @@ public class Main {
                                     break;
                                 } else if (judgeDight.indexOf(c) == -1) {
                                     System.out.println("Err");
-//                                    System.out.println("result1: c = " + c);
+                                    System.out.println("result1: c = " + c);
                                     return;
                                 }
                             }
@@ -290,7 +290,7 @@ public class Main {
                     }
                     if (!test) {
                         System.out.println("Err");
-//                        System.out.println("result2: c = " + c);
+                        System.out.println("result2: c = " + c);
                         break;
                     }
                 }
