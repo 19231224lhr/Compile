@@ -9,6 +9,7 @@ public class Main {
         String judgeLetter = "abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
 //        String filePath = scanner.nextLine();
         String filePath = args[0];
+//        String filePath = "C:\\Users\\lhr4108\\Desktop\\test.txt";
 //        System.out.println(filePath);
         File file = new File(filePath);
         if (file.isFile() && file.exists()) {
@@ -40,16 +41,16 @@ public class Main {
                     c = line.charAt(k);
                     if (c == 'i' && k + 1 < length) {
                         // 判断是不是if
-                        c = line.charAt(k + 1);
+                        c1 = line.charAt(k + 1);
                         if (k + 2 == length) {
-                            if (c == 'f') {
+                            if (c1 == 'f') {
                                 System.out.println("If");
                                 test = true;
                                 k = k + 2;
                             }
                         } else if (k + 2 < length) {
-                            c1 = line.charAt(k + 2);
-                            if (c == 'f' && (c1 == ' ' || c1 == ';') || c1 == '(' || c1 == '\t' || c1 == '\n') {
+                            c2 = line.charAt(k + 2);
+                            if (c1 == 'f' && (c2 == ' ' || c2 == ';' || c2 == '(' || c2 == '\t' || c2 == '\n')) {
                                 System.out.println("If");
                                 test = true;
                                 k = k + 2;
@@ -252,9 +253,9 @@ public class Main {
                                     System.out.println("Number" + "(" + tempDight + ")");
                                     break;
                                 } else if (judgeDight.indexOf(c) == -1) {
-                                    System.out.println("Err");
-                                    System.out.println("result1: c = " + c);
-                                    return;
+//                                    System.out.println("Err");
+//                                    System.out.println("result1: c = " + c);
+                                    System.out.println("Number" + "(" + tempDight + ")");
                                 }
                             }
                         }
@@ -290,8 +291,8 @@ public class Main {
                     }
                     if (!test) {
                         System.out.println("Err");
-                        System.out.println("result2: c = " + c);
-                        break;
+//                        System.out.println("result2: c = " + c);
+                        return;
                     }
                 }
             }
