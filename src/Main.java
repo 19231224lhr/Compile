@@ -49,7 +49,7 @@ public class Main {
                             }
                         } else if (k + 2 < length) {
                             c1 = line.charAt(k + 2);
-                            if (c == 'f' && (c1 == ' ' || c1 == ';') || c1 == '(') {
+                            if (c == 'f' && (c1 == ' ' || c1 == ';') || c1 == '(' || c1 == '\t' || c1 == '\n') {
                                 System.out.println("If");
                                 test = true;
                                 k = k + 2;
@@ -68,7 +68,7 @@ public class Main {
                             }
                         } else if (k + 4 < length) {
                             c4 = line.charAt(k + 4);
-                            if (c1 == 'l' && c2 == 's' && c3 == 'e' && (c4 == ' ' || c4 == ';' || c4 == '{')) {
+                            if (c1 == 'l' && c2 == 's' && c3 == 'e' && (c4 == ' ' || c4 == ';' || c4 == '{' || c4 == '\t' || c4 == '\n')) {
                                 System.out.println("Else");
                                 test = true;
                                 k = k + 4;
@@ -88,7 +88,7 @@ public class Main {
                             }
                         } else if (k + 5 < length) {
                             c5 = line.charAt(k + 5);
-                            if (c1 == 'h' && c2 == 'i' && c3 == 'l' && c4 == 'e' && (c5 == ' ' || c5 == ';' || c5 == '(')) {
+                            if (c1 == 'h' && c2 == 'i' && c3 == 'l' && c4 == 'e' && (c5 == ' ' || c5 == ';' || c5 == '(' || c5 == '\t' || c5 == '\n')) {
                                 // 符合条件
                                 System.out.println("While");
                                 test = true;
@@ -110,7 +110,7 @@ public class Main {
                             }
                         } else if (k + 5 < length) {
                             c5 = line.charAt(k + 5);
-                            if (c1 == 'r' && c2 == 'e' && c3 == 'a' && c4 == 'k' && (c5 == ' ' || c5 == ';')) {
+                            if (c1 == 'r' && c2 == 'e' && c3 == 'a' && c4 == 'k' && (c5 == ' ' || c5 == ';' || c5 == '\t' || c5 == '\n')) {
                                 System.out.println("Break");
                                 test = true;
                                 k = k + 5;
@@ -134,7 +134,7 @@ public class Main {
                             }
                         } else if (k + 8 < length) {
                             c8 = line.charAt(k + 8);
-                            if (c1 == 'o' && c2 == 'n' && c3 == 't' && c4 == 'i' && c5 == 'n' && c6 == 'u' && c7 == 'e' && (c8 == ' ' || c8 == ';')) {
+                            if (c1 == 'o' && c2 == 'n' && c3 == 't' && c4 == 'i' && c5 == 'n' && c6 == 'u' && c7 == 'e' && (c8 == ' ' || c8 == ';' || c8 == '\t' || c8 == '\n')) {
                                 System.out.println("Continue");
                                 test = true;
                                 k = k + 8;
@@ -157,7 +157,7 @@ public class Main {
                             }
                         } else if (k + 6 < length) {
                             c6 = line.charAt(k + 6);
-                            if (c1 == 'e' && c2 == 't' && c3 == 'u' && c4 == 'r' && c5 == 'n' && (c6 == ' ' || c6 == ';' || c6 == '(' || c6 == '{')) {
+                            if (c1 == 'e' && c2 == 't' && c3 == 'u' && c4 == 'r' && c5 == 'n' && (c6 == ' ' || c6 == ';' || c6 == '(' || c6 == '{' || c6 == '\t' || c6 == '\n')) {
                                 System.out.println("Return");
                                 test = true;
                                 k = k + 6;
@@ -248,11 +248,12 @@ public class Main {
                                     break;
                                 }
                                 c = line.charAt(k);
-                                if (judgeDight.indexOf(c) == -1 && (c == '=' || c == '+' || c == '*' || c == '/' || c == ')' || c == '}' || c == ';' || c == ' ')) {
+                                if (judgeDight.indexOf(c) == -1 && (c == '=' || c == '+' || c == '*' || c == '/' || c == ')' || c == '}' || c == ';' || c == ' ' || c == '\t' || c == '\n')) {
                                     System.out.println("Number" + "(" + tempDight + ")");
                                     break;
                                 } else if (judgeDight.indexOf(c) == -1) {
                                     System.out.println("Err");
+//                                    System.out.println("result1: c = " + c);
                                     return;
                                 }
                             }
@@ -279,10 +280,17 @@ public class Main {
                     }
                     if (c == '\t') {
                         test = true;
+//                        System.out.println("ttt");
+                        k++;
+                    }
+                    if (c == '\n') {
+                        test = true;
+//                        System.out.println("nnn");
                         k++;
                     }
                     if (!test) {
                         System.out.println("Err");
+//                        System.out.println("result2: c = " + c);
                         break;
                     }
                 }
