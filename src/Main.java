@@ -62,6 +62,14 @@ public class Main {
                     }
                     if (c == '0' && k + 1 < length && (line.charAt(k + 1) == 'X' || line.charAt(k + 1) == 'x')) {
                         // 16
+                        if (k + 2 == length) {
+                            words.add("!number_err");
+                            break;
+                        }
+                        if (hexadecimal_digit.indexOf(line.charAt(k + 2)) == -1) {
+                            words.add("!number_err");
+                            break;
+                        }
                         String temp = "";
                         if (line.charAt(k + 1) == 'X') {
                             temp = "!number 0X";
