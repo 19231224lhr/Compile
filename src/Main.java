@@ -469,7 +469,7 @@ public class Main {
             // System.out.println(2);
             // return 2;
             // System.out.println("Err");
-            System.exit(2);
+            System.exit(12);
         }
         ArrayList<String> result = new ArrayList<>(10);
         boolean isTrue = true;
