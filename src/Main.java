@@ -35,7 +35,7 @@ public class Main {
                     e.printStackTrace();
                 }
                 String line = lineTxt;
-                System.out.println(line);
+                // System.out.println(line);
                 int length = line.length();
                 int k = 0;
                 boolean test = false;
@@ -86,7 +86,7 @@ public class Main {
                             if (hexadecimal_digit.indexOf(c) != -1) {
                                 temp = temp + c;
                             } else {
-                                k++;
+                                // k++;
                                 // words.add(temp);
                                 break;
                             }
@@ -455,15 +455,7 @@ public class Main {
                 e.printStackTrace();
             }
         }
-//        if (words.size() != 9) {
-//            // System.out.println(2);
-//            // return 2;
-//            // System.out.println("Err");
-//            for (int i = 0; i <= words.size() - 1; i++) {
-//                System.out.println("The " + (i + 1) + " word is " + words.get(i));
-//            }
-//            System.exit(12);
-//        }
+
         try {
             System.setOut(new PrintStream(new BufferedOutputStream(
                     new FileOutputStream(OutputPath)), true));
