@@ -324,18 +324,31 @@ public class Main {
                                 k++;
                                 if (k == length) {
                                     // System.out.println("Number" + "(" + tempDight + ")");
+                                    if (tempDight.charAt(0) == '0') {
+                                        words.add("!number_err " + tempDight);
+                                        break;
+                                        // System.exit(2);
+                                    }
                                     words.add("!number " + tempDight);
                                     break;
                                 }
                                 c = line.charAt(k);
                                 if (judgeDight.indexOf(c) == -1 && (c == '=' || c == '+' || c == '*' || c == '/' || c == ')' || c == '}' || c == ';' || c == ' ' || c == '\t' || c == '\n')) {
                                     // System.out.println("Number" + "(" + tempDight + ")");
+                                    if (tempDight.charAt(0) == '0') {
+                                        words.add("!number_err " + tempDight);
+                                        break;
+                                    }
                                     words.add("!number " + tempDight);
                                     break;
                                 } else if (judgeDight.indexOf(c) == -1) {
 //                                    System.out.println("Err");
 //                                    System.out.println("result1: c = " + c);
                                     // System.out.println("Number" + "(" + tempDight + ")");
+                                    if (tempDight.charAt(0) == '0') {
+                                        words.add("!number_err " + tempDight);
+                                        break;
+                                    }
                                     words.add("!number " + tempDight);
                                 }
                             }
@@ -398,6 +411,7 @@ public class Main {
                     new FileOutputStream(OutputPath)), true));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+
         }
         //加一个true相当于flush
         // System.out.println("bbb");
@@ -407,6 +421,7 @@ public class Main {
         if (words.size() != 9) {
             // System.out.println(2);
             // return 2;
+            // System.out.println("Err");
             System.exit(2);
         }
         ArrayList<String> result = new ArrayList<>(10);
@@ -466,6 +481,9 @@ public class Main {
                 }
             }
             if (i == 6) {
+                if (words.get(6).contains("!number_err")) {
+                    System.exit(2);
+                }
                 if (words.get(6).contains("!number")) {
                     // System.out.print(words.get(6).split(" ")[1]);
                     result.add(words.get(6).split(" ")[1]);
@@ -495,6 +513,7 @@ public class Main {
             }
         }
         if (isTrue == false) {
+            // System.out.println("Err");
             // System.out.println(2);
             // return 2;
             System.exit(2);
