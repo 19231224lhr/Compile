@@ -465,12 +465,12 @@ public class Main {
 //        for (int i = 0; i <= words.size() - 1; i++) {
 //            System.out.println("The " + (i + 1) + " word is " + words.get(i));
 //        }
-        if (words.size() != 9) {
-            // System.out.println(2);
-            // return 2;
-            // System.out.println("Err");
-            System.exit(12);
-        }
+//        if (words.size() != 9) {
+//            // System.out.println(2);
+//            // return 2;
+//            // System.out.println("Err");
+//            System.exit(12);
+//        }
         ArrayList<String> result = new ArrayList<>(10);
         boolean isTrue = true;
         for (int i = 0; i <= words.size() - 1; i++) {
