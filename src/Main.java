@@ -491,7 +491,7 @@ public class Main {
                     result.add("@main");
                 } else {
                     isTrue = false;
-                    System.exit(2);
+                    System.exit(11);
 
                     // System.out.println("Err 2");
                     break;
