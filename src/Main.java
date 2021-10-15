@@ -280,11 +280,15 @@ public class Main {
                         k++;
                     }
                     if (c == '*') {
-                        System.out.println("Mult");
+                        // System.out.println("Mult");
+                        words.add("*");
                         test = true;
                         k++;
                     }
                     if (c == '/') {
+                        if (k + 1 >= length) {
+                            break;
+                        }
                         if (line.charAt(++k) == '/') {
                             test = true;
                             while (k <= length - 1) {
@@ -450,13 +454,13 @@ public class Main {
                 e.printStackTrace();
             }
         }
-        try {
-            System.setOut(new PrintStream(new BufferedOutputStream(
-                    new FileOutputStream(OutputPath)), true));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-
-        }
+//        try {
+//            System.setOut(new PrintStream(new BufferedOutputStream(
+//                    new FileOutputStream(OutputPath)), true));
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//
+//        }
         //加一个true相当于flush
         // System.out.println("bbb");
 //        for (int i = 0; i <= words.size() - 1; i++) {
