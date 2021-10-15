@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static int main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> words = new ArrayList<>(100);
         String judge = "abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789";
@@ -383,7 +383,7 @@ public class Main {
                     if (!test) {
                         System.out.println("Err");
                         System.out.println("result" + k + ": c = " + c);
-                        return 0;
+                        return;
                     }
                 }
             }
@@ -406,7 +406,8 @@ public class Main {
 //        }
         if (words.size() != 9) {
             // System.out.println(2);
-            return 2;
+            // return 2;
+            System.exit(2);
         }
         ArrayList<String> result = new ArrayList<>(10);
         boolean isTrue = true;
@@ -495,13 +496,14 @@ public class Main {
         }
         if (isTrue == false) {
             // System.out.println(2);
-            return 2;
+            // return 2;
+            System.exit(2);
         }
         for (int i = 0; i <= result.size() - 1; i++) {
             System.out.print(result.get(i));
         }
 
-        return 0;
+        // return 0;
     }
 
 
