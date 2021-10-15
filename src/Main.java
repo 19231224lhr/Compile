@@ -323,10 +323,19 @@ public class Main {
                                 tempDight = tempDight + c;
                                 k++;
                                 if (k == length) {
+                                    int k1 = 0;
+
                                     // System.out.println("Number" + "(" + tempDight + ")");
                                     if (tempDight.charAt(0) == '0') {
-                                        words.add("!number_err " + tempDight);
-                                        break;
+                                        while (k1 < tempDight.length()) {
+                                            if (Integer.parseInt(String.valueOf(tempDight.charAt(k1))) >= 8) {
+                                                words.add("!number_err " + tempDight);
+                                                break;
+                                            }
+                                            k1++;
+                                        }
+                                        // words.add("!number_err " + tempDight);
+                                        // break;
                                         // System.exit(2);
                                     }
                                     words.add("!number " + tempDight);
@@ -335,9 +344,20 @@ public class Main {
                                 c = line.charAt(k);
                                 if (judgeDight.indexOf(c) == -1 && (c == '=' || c == '+' || c == '*' || c == '/' || c == ')' || c == '}' || c == ';' || c == ' ' || c == '\t' || c == '\n')) {
                                     // System.out.println("Number" + "(" + tempDight + ")");
+                                    int k1 = 0;
+
+                                    // System.out.println("Number" + "(" + tempDight + ")");
                                     if (tempDight.charAt(0) == '0') {
-                                        words.add("!number_err " + tempDight);
-                                        break;
+                                        while (k1 < tempDight.length()) {
+                                            if (Integer.parseInt(String.valueOf(tempDight.charAt(k1))) >= 8) {
+                                                words.add("!number_err " + tempDight);
+                                                break;
+                                            }
+                                            k1++;
+                                        }
+                                        // words.add("!number_err " + tempDight);
+                                        // break;
+                                        // System.exit(2);
                                     }
                                     words.add("!number " + tempDight);
                                     break;
@@ -345,9 +365,20 @@ public class Main {
 //                                    System.out.println("Err");
 //                                    System.out.println("result1: c = " + c);
                                     // System.out.println("Number" + "(" + tempDight + ")");
+                                    int k1 = 0;
+
+                                    // System.out.println("Number" + "(" + tempDight + ")");
                                     if (tempDight.charAt(0) == '0') {
-                                        words.add("!number_err " + tempDight);
-                                        break;
+                                        while (k1 < tempDight.length()) {
+                                            if (Integer.parseInt(String.valueOf(tempDight.charAt(k1))) >= 8) {
+                                                words.add("!number_err " + tempDight);
+                                                break;
+                                            }
+                                            k1++;
+                                        }
+                                        // words.add("!number_err " + tempDight);
+                                        // break;
+                                        // System.exit(2);
                                     }
                                     words.add("!number " + tempDight);
                                 }
