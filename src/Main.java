@@ -17,7 +17,6 @@ public class Main {
 //        String filePath = "C:\\Users\\lhr4108\\Desktop\\test.txt";
 //        System.out.println(filePath);
         File file = new File(filePath);
-        int a = 0x123;
         if (file.isFile() && file.exists()) {
             InputStreamReader read = null;
             try {
@@ -482,6 +481,7 @@ public class Main {
                 } else {
                     isTrue = false;
                     // System.out.println("Err 1");
+                    System.exit(1);
                     break;
                 }
             }
@@ -491,6 +491,8 @@ public class Main {
                     result.add("@main");
                 } else {
                     isTrue = false;
+                    System.exit(2);
+
                     // System.out.println("Err 2");
                     break;
                 }
@@ -498,6 +500,8 @@ public class Main {
             if (i == 2) {
                 if (i + 1 == words.size()) {
                     isTrue = false;
+                    System.exit(3);
+
                     // System.out.println("Err 3");
                     break;
                 }
@@ -507,6 +511,7 @@ public class Main {
                     i++;
                 } else {
                     isTrue = false;
+                    System.exit(4);
                     // System.out.println("Err 4");
                 }
             }
@@ -524,13 +529,14 @@ public class Main {
                     result.add("ret i32 ");
                 } else {
                     isTrue = false;
+                    System.exit(5);
                     // System.out.println("Err 5");
                     break;
                 }
             }
             if (i == 6) {
                 if (words.get(6).contains("!number_err")) {
-                    System.exit(2);
+                    System.exit(6);
                 }
                 if (words.get(6).contains("!number_16")) {
                     result.add(String.valueOf(Integer.parseInt(words.get(6).split(" ")[1].substring(2), 16)));
@@ -547,6 +553,8 @@ public class Main {
 
                 } else {
                     isTrue = false;
+                    System.exit(7);
+
                     // System.out.println("Err 6");
                     break;
                 }
@@ -557,6 +565,8 @@ public class Main {
                     result.add("\n");
                 } else {
                     isTrue = false;
+                    System.exit(8);
+
                     // System.out.println("Err 7");
                 }
             }
@@ -566,6 +576,8 @@ public class Main {
                     result.add("}");
                 } else {
                     isTrue = false;
+                    System.exit(9);
+
                     // System.out.println("Err 8");
                 }
             }
@@ -574,7 +586,7 @@ public class Main {
             // System.out.println("Err");
             // System.out.println(2);
             // return 2;
-            System.exit(2);
+            System.exit(10);
         }
         for (int i = 0; i <= result.size() - 1; i++) {
             System.out.print(result.get(i));
