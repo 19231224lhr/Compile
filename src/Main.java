@@ -9,7 +9,7 @@ public class Main {
         String judge = "abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789";
         String judgeDight = "0123456789";
         String judgeLetter = "abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
-        String hexadecimal_digit = "0123456789ABCDEFABCDEF";
+        String hexadecimal_digit = "0123456789ABCDEFabcdef";
         String[] save_words = new String[]{"int", "boolean", "double", "string"};
 //        String filePath = scanner.nextLine();
         String filePath = args[0];
@@ -46,6 +46,7 @@ public class Main {
                     test = false;
                     c = line.charAt(k);
                     if (isZhushi) {
+                        test = true;
                         while (k != length) {
                             if (line.charAt(k) == '*') {
                                 if (k + 1 < length) {
@@ -62,19 +63,22 @@ public class Main {
                     }
                     if (c == '0' && k + 1 < length && (line.charAt(k + 1) == 'X' || line.charAt(k + 1) == 'x')) {
                         // 16
+                        test = true;
                         if (k + 2 == length) {
+                            // System.out.println("Err1");
                             words.add("!number_err");
                             break;
                         }
                         if (hexadecimal_digit.indexOf(line.charAt(k + 2)) == -1) {
+                            // System.out.println("Err2 " + line.charAt(k + 2));
                             words.add("!number_err");
                             break;
                         }
                         String temp = "";
                         if (line.charAt(k + 1) == 'X') {
-                            temp = "!number 0X";
+                            temp = "!number_16 0X";
                         } else {
-                            temp = "!number 0x";
+                            temp = "!number_16 0x";
                         }
                         k = k + 2;
                         while (k < length) {
@@ -83,6 +87,7 @@ public class Main {
                                 temp = temp + c;
                             } else {
                                 k++;
+                                // words.add(temp);
                                 break;
                             }
                             k++;
@@ -523,9 +528,19 @@ public class Main {
                 if (words.get(6).contains("!number_err")) {
                     System.exit(2);
                 }
-                if (words.get(6).contains("!number")) {
+                if (words.get(6).contains("!number_16")) {
+                    result.add(String.valueOf(Integer.parseInt(words.get(6).split(" ")[1].substring(2), 16)));
+
+                } else if (words.get(6).contains("!number")) {
                     // System.out.print(words.get(6).split(" ")[1]);
-                    result.add(words.get(6).split(" ")[1]);
+                    String temp;
+                    temp = words.get(6).split(" ")[1];
+                    if (temp.charAt(0) == '0') {
+                        result.add(String.valueOf(Integer.parseInt(temp, 8)));
+                    } else {
+                        result.add(words.get(6).split(" ")[1]);
+                    }
+
                 } else {
                     isTrue = false;
                     // System.out.println("Err 6");
