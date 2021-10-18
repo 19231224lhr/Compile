@@ -1,4 +1,4 @@
 FROM openjdk:14
 COPY ./ /app/
 WORKDIR /app/
-RUN javac src/Main.java -d ./
+RUN javac src/Main.java src/Method.java -d ./
