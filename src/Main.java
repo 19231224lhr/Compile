@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Method method = new Method();
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> words = new ArrayList<>(100);
         String judge = "abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789";
@@ -463,144 +464,142 @@ public class Main {
             e.printStackTrace();
 
         }
-        //加一个true相当于flush
-        // System.out.println("bbb");
 //        for (int i = 0; i <= words.size() - 1; i++) {
 //            System.out.println("The " + (i + 1) + " word is " + words.get(i));
 //        }
         if (words.size() != 9) {
-            // System.out.println(2);
-            // return 2;
-            // System.out.println("Err");
-//            for (int i = 0; i <= words.size() - 1; i++) {
-//                System.out.println("The " + (i + 1) + " word is " + words.get(i));
-//            }
+            System.out.println("Error : length is error!");
             System.exit(12);
         }
         ArrayList<String> result = new ArrayList<>(10);
-        boolean isTrue = true;
-        for (int i = 0; i <= words.size() - 1; i++) {
-            if (i == 0) {
-                if (words.get(0).equals("int")) {
-                    // System.out.print("define dso_local i32 ");
-                    result.add("define dso_local i32 ");
-                } else {
-                    isTrue = false;
-                    // System.out.println("Err 1");
-                    System.exit(1);
-                    break;
-                }
-            }
-            if (i == 1) {
-                if (words.get(1).equals("main")) {
-                    // System.out.print("@main");
-                    result.add("@main");
-                } else {
-                    isTrue = false;
-                    System.exit(11);
-
-                    // System.out.println("Err 2");
-                    break;
-                }
-            }
-            if (i == 2) {
-                if (i + 1 == words.size()) {
-                    isTrue = false;
-                    System.exit(3);
-
-                    // System.out.println("Err 3");
-                    break;
-                }
-                if (words.get(2).equals("(") && words.get(3).equals(")")) {
-                    // System.out.print("()");
-                    result.add("()");
-                    i++;
-                } else {
-                    isTrue = false;
-                    System.exit(4);
-                    // System.out.println("Err 4");
-                }
-            }
-            if (i == 4) {
-                if (words.get(i).equals("{")) {
-                    // System.out.println("{");
-                    result.add("{");
-                    result.add("\n");
-                    result.add("\t");
-                }
-            }
-            if (i == 5) {
-                if (words.get(5).equals("return")) {
-                    // System.out.print("ret i32 ");
-                    result.add("ret i32 ");
-                } else {
-                    isTrue = false;
-                    System.exit(5);
-                    // System.out.println("Err 5");
-                    break;
-                }
-            }
-            if (i == 6) {
-                if (words.get(6).contains("!number_err")) {
-                    System.exit(6);
-                }
-                if (words.get(6).contains("!number_16")) {
-                    result.add(String.valueOf(Integer.parseInt(words.get(6).split(" ")[1].substring(2), 16)));
-
-                } else if (words.get(6).contains("!number")) {
-                    // System.out.print(words.get(6).split(" ")[1]);
-                    String temp;
-                    temp = words.get(6).split(" ")[1];
-                    if (temp.charAt(0) == '0') {
-                        result.add(String.valueOf(Integer.parseInt(temp, 8)));
-                    } else {
-                        result.add(words.get(6).split(" ")[1]);
-                    }
-
-                } else {
-                    isTrue = false;
-                    System.exit(7);
-
-                    // System.out.println("Err 6");
-                    break;
-                }
-            }
-            if (i == 7) {
-                if (words.get(7).equals(";")) {
-                    // System.out.println();
-                    result.add("\n");
-                } else {
-                    isTrue = false;
-                    System.exit(8);
-
-                    // System.out.println("Err 7");
-                }
-            }
-            if (i == 8) {
-                if (words.get(8).equals("}")) {
-                    // System.out.print("}");
-                    result.add("}");
-                } else {
-                    isTrue = false;
-                    System.exit(9);
-
-                    // System.out.println("Err 8");
-                }
-            }
-        }
-        if (isTrue == false) {
-            // System.out.println("Err");
-            // System.out.println(2);
-            // return 2;
-            System.exit(10);
-        }
+        method.CompUnit(0, words, result);
+//        boolean isTrue = true;
+//        for (int i = 0; i <= words.size() - 1; i++) {
+//            if (i == 0) {
+//                if (words.get(0).equals("int")) {
+//                    // System.out.print("define dso_local i32 ");
+//                    result.add("define dso_local i32 ");
+//                } else {
+//                    isTrue = false;
+//                    // System.out.println("Err 1");
+//                    System.exit(1);
+//                    break;
+//                }
+//            }
+//            if (i == 1) {
+//                if (words.get(1).equals("main")) {
+//                    // System.out.print("@main");
+//                    result.add("@main");
+//                } else {
+//                    isTrue = false;
+//                    System.exit(11);
+//
+//                    // System.out.println("Err 2");
+//                    break;
+//                }
+//            }
+//            if (i == 2) {
+//                if (i + 1 == words.size()) {
+//                    isTrue = false;
+//                    System.exit(3);
+//
+//                    // System.out.println("Err 3");
+//                    break;
+//                }
+//                if (words.get(2).equals("(") && words.get(3).equals(")")) {
+//                    // System.out.print("()");
+//                    result.add("()");
+//                    i++;
+//                } else {
+//                    isTrue = false;
+//                    System.exit(4);
+//                    // System.out.println("Err 4");
+//                }
+//            }
+//            if (i == 4) {
+//                if (words.get(i).equals("{")) {
+//                    // System.out.println("{");
+//                    result.add("{");
+//                    result.add("\n");
+//                    result.add("\t");
+//                }
+//            }
+//            if (i == 5) {
+//                if (words.get(5).equals("return")) {
+//                    // System.out.print("ret i32 ");
+//                    result.add("ret i32 ");
+//                } else {
+//                    isTrue = false;
+//                    System.exit(5);
+//                    // System.out.println("Err 5");
+//                    break;
+//                }
+//            }
+//            if (i == 6) {
+//                if (words.get(6).contains("!number_err")) {
+//                    System.exit(6);
+//                }
+//                if (words.get(6).contains("!number_16")) {
+//                    result.add(String.valueOf(Integer.parseInt(words.get(6).split(" ")[1].substring(2), 16)));
+//
+//                } else if (words.get(6).contains("!number")) {
+//                    // System.out.print(words.get(6).split(" ")[1]);
+//                    String temp;
+//                    temp = words.get(6).split(" ")[1];
+//                    if (temp.charAt(0) == '0') {
+//                        result.add(String.valueOf(Integer.parseInt(temp, 8)));
+//                    } else {
+//                        result.add(words.get(6).split(" ")[1]);
+//                    }
+//
+//                } else {
+//                    isTrue = false;
+//                    System.exit(7);
+//
+//                    // System.out.println("Err 6");
+//                    break;
+//                }
+//            }
+//            if (i == 7) {
+//                if (words.get(7).equals(";")) {
+//                    // System.out.println();
+//                    result.add("\n");
+//                } else {
+//                    isTrue = false;
+//                    System.exit(8);
+//
+//                    // System.out.println("Err 7");
+//                }
+//            }
+//            if (i == 8) {
+//                if (words.get(8).equals("}")) {
+//                    // System.out.print("}");
+//                    result.add("}");
+//                } else {
+//                    isTrue = false;
+//                    System.exit(9);
+//
+//                    // System.out.println("Err 8");
+//                }
+//            }
+//        }
+//        if (isTrue == false) {
+//            // System.out.println("Err");
+//            // System.out.println(2);
+//            // return 2;
+//            System.exit(10);
+//        }
+//        for (int i = 0; i <= result.size() - 1; i++) {
+//            System.out.print(result.get(i));
+//        }
+//
+//        // return 0;
+//    }
         for (int i = 0; i <= result.size() - 1; i++) {
             System.out.print(result.get(i));
         }
 
-        // return 0;
+
     }
-
-
 }
 
