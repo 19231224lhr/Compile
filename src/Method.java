@@ -79,6 +79,7 @@ public class Method {
             System.out.println("Error : don't have return!");
             System.exit(5);
         }
+        result.add("ret i32 ");
         s2 = words.get(index);
         index = Number(index,s2,result) + 1;
         s3 = words.get(index);
