@@ -1,0 +1,30 @@
+grammar test;
+
+END : 'hello';
+IDENT : 'main';
+LPar : '(';
+RPar : ')';
+FUNCTYPE : 'int';
+LBrace : '{';
+RBrace : '}';
+RETURN : 'return';
+Semicolon : ';';
+Nonzerodigit : [1-9][0-9]*;
+Octaldigit : [0][0-7]+;
+Digit : [0-9]*;
+Hexadecimaldigit : [0-9a-fA-F]+;
+Hexadecimalprefix : ('0x' | '0X')[0-9a-fA-F]+;
+// RET : ' ' | ' \n' | '\n';
+SL_COMMENT : '//' .*? '\n' -> skip;
+SL_COMMENT_1 : '/*'(.|'\n')*?'*/' -> skip;
+WHITE_SPACE: [ \t\n] -> skip;
+//WHITE_SPACE: [ \t]+ -> skip;
+
+compunit : funcdef;
+funcdef : FUNCTYPE IDENT LPar RPar block;
+block : LBrace stmt RBrace;
+stmt : RETURN number Semicolon;
+number : decimalconst | octalconst | hexadecimalconst;
+decimalconst : Nonzerodigit;
+octalconst : Octaldigit;
+hexadecimalconst : Hexadecimalprefix;
