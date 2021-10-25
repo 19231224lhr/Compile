@@ -1,4 +1,5 @@
 import org.antlr.v4.runtime.tree.ParseTree;
+
 import java.util.ArrayList;
 
 public class Visitor extends testBaseVisitor<Void> {
@@ -41,12 +42,12 @@ public class Visitor extends testBaseVisitor<Void> {
     public String analyseString(String string) {
         int length = string.length();
         StringBuilder result = new StringBuilder();
-        int add_num = 0,sub_num = 0;
-        for(int i = 0;i < length;) {
+        int add_num = 0, sub_num = 0;
+        for (int i = 0; i < length; ) {
             // 判断开头
             if (i == 0 && (string.charAt(0) == '-' || string.charAt(0) == '+')) {
                 int j = 0;
-                while(j < length) {
+                while (j < length) {
                     if (string.charAt(j) == '+') {
                         add_num++;
                     } else if (string.charAt(j) == '-') {
@@ -67,7 +68,7 @@ public class Visitor extends testBaseVisitor<Void> {
                 if (string.charAt(i) == '(' || string.charAt(i) == '*' || string.charAt(i) == '/' || string.charAt(i) == '%') {
                     result.append(string.charAt(i));
                     int j = i + 1;
-                    while(j < length) {
+                    while (j < length) {
                         if (string.charAt(j) == '+') {
                             add_num++;
                         } else if (string.charAt(j) == '-') {
@@ -91,7 +92,7 @@ public class Visitor extends testBaseVisitor<Void> {
                 } else if (string.charAt(i) == ')') {
                     result.append(string.charAt(i));
                     int j = i + 1;
-                    while(j < length) {
+                    while (j < length) {
                         if (string.charAt(j) == '*' || string.charAt(j) == '/' || string.charAt(j) == '%') {
                             i++;
                             break;
@@ -124,7 +125,7 @@ public class Visitor extends testBaseVisitor<Void> {
                     //i++;
                     result.append(string.charAt(i));
                     int j = i + 1;
-                    while(j < length) {
+                    while (j < length) {
                         if (string.charAt(j) == '+') {
                             add_num++;
                         } else if (string.charAt(j) == '-') {
@@ -154,6 +155,17 @@ public class Visitor extends testBaseVisitor<Void> {
             }
 
         }
+        for (int i = 0; i < result.length(); i++) {
+            if (result.charAt(i) == '(') {
+                // 如果出现了(-(这种情况，需要将其替换为(0-(，因为现在设计的运算方法会将-也是别为一个单独的数字
+                if (i + 2 < length) {
+                    if (result.charAt(i + 1) == '-' && result.charAt(i + 2) == '(') {
+                        result.insert(i + 1, 0);
+
+                    }
+                }
+            }
+        }
         return result.toString();
     }
 
@@ -170,7 +182,7 @@ public class Visitor extends testBaseVisitor<Void> {
         // System.out.println(string);
         String test = analyseString(string);
         // System.out.println("result = " + test);
-        int result = (int)Calculator.conversion(test);
+        int result = (int) Calculator.conversion(test);
         System.out.print(result);
         return null;
     }

@@ -9,7 +9,7 @@ LBrace : '{';
 RBrace : '}';
 RETURN : 'return';
 Semicolon : ';';
-Nonzerodigit : [1-9][0-9]*;
+Nonzerodigit : [1-9][0-9]*|[0];
 Octaldigit : [0][0-7]+;
 Hexadecimaldigit : [0-9a-fA-F]+;
 Hexadecimalprefix : ('0x' | '0X')[0-9a-fA-F]+;
