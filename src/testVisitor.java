@@ -34,6 +34,36 @@ public interface testVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStmt(testParser.StmtContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link testParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExp(testParser.ExpContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link testParser#addexp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAddexp(testParser.AddexpContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link testParser#mulexp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMulexp(testParser.MulexpContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link testParser#unaryexp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUnaryexp(testParser.UnaryexpContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link testParser#primaryexp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrimaryexp(testParser.PrimaryexpContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link testParser#number}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

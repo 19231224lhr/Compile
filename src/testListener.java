@@ -47,6 +47,56 @@ public interface testListener extends ParseTreeListener {
 	 */
 	void exitStmt(testParser.StmtContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link testParser#exp}.
+	 * @param ctx the parse tree
+	 */
+	void enterExp(testParser.ExpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link testParser#exp}.
+	 * @param ctx the parse tree
+	 */
+	void exitExp(testParser.ExpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link testParser#addexp}.
+	 * @param ctx the parse tree
+	 */
+	void enterAddexp(testParser.AddexpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link testParser#addexp}.
+	 * @param ctx the parse tree
+	 */
+	void exitAddexp(testParser.AddexpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link testParser#mulexp}.
+	 * @param ctx the parse tree
+	 */
+	void enterMulexp(testParser.MulexpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link testParser#mulexp}.
+	 * @param ctx the parse tree
+	 */
+	void exitMulexp(testParser.MulexpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link testParser#unaryexp}.
+	 * @param ctx the parse tree
+	 */
+	void enterUnaryexp(testParser.UnaryexpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link testParser#unaryexp}.
+	 * @param ctx the parse tree
+	 */
+	void exitUnaryexp(testParser.UnaryexpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link testParser#primaryexp}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrimaryexp(testParser.PrimaryexpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link testParser#primaryexp}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrimaryexp(testParser.PrimaryexpContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link testParser#number}.
 	 * @param ctx the parse tree
 	 */

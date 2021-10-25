@@ -7,7 +7,7 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        // System.out.println("Start!");
+         // System.out.println("Start!");
         // BailErrorStrategy bailErrorStrategy = new BailErrorStrategy();
         String filePath = args[0];
         String OutputPath = args[1];
@@ -31,7 +31,7 @@ public class Main {
             input.append(input_1 + "\n");
             // System.out.println(input_1);
         }
-        // System.out.println(input);
+        System.out.println(input);
         try {
             System.setOut(new PrintStream(new BufferedOutputStream(
                     new FileOutputStream(OutputPath)), true));
@@ -39,6 +39,10 @@ public class Main {
             e.printStackTrace();
 
         }
+
+//        String input = "int main() {\n" +
+//                "  return 0x10 - -5 + 5 + -0X15;\n" +
+//                "}";
         CharStream inputStream = CharStreams.fromString(input.toString());
         testLexer lexer = new testLexer(inputStream);
         CommonTokenStream tokenStream = new CommonTokenStream(lexer);
