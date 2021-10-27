@@ -1,3 +1,6 @@
 define dso_local i32 @main(){
-	ret i32 234
+%x0 = sub i32 0,15
+%x1 = sdiv i32 %x0,5
+%x2 = sub i32 1,%x1
+ret i32 %x2
 }
