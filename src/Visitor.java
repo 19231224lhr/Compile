@@ -155,36 +155,180 @@ public class Visitor extends testBaseVisitor<Void> {
             }
 
         }
-        for (int i = 0; i < result.length(); i++) {
-            if (result.charAt(i) == '(') {
-                // 如果出现了(-(这种情况，需要将其替换为(0-(，因为现在设计的运算方法会将-也是别为一个单独的数字
-                if (i + 2 < length) {
-                    if (result.charAt(i + 1) == '-' && result.charAt(i + 2) == '(') {
-                        result.insert(i + 1, 0);
+//        for (int i = 0; i < result.length(); i++) {
+//            if (result.charAt(i) == '(') {
+//                // 如果出现了(-(这种情况，需要将其替换为(0-(，因为现在设计的运算方法会将-也是别为一个单独的数字
+//                if (i + 2 < length) {
+//                    if (result.charAt(i + 1) == '-' && result.charAt(i + 2) == '(') {
+//                        result.insert(i + 1, 0);
+//
+//                    }
+//                }
+//            }
+//        }
+        return result.toString();
+    }
 
+    public ArrayList<String> analyseString(ArrayList<String> string) {
+        int length = string.size();
+        ArrayList<String> result = new ArrayList<>();
+        int add_num = 0, sub_num = 0;
+        for (int i = 0; i < length; ) {
+            // 判断开头
+            if (i == 0 && (string.get(i).equals("-") || string.get(i).equals("+"))) {
+                int j = 0;
+                while (j < length) {
+                    if (string.get(j).equals("+")) {
+                        add_num++;
+                    } else if (string.get(j).equals("-")) {
+                        sub_num++;
+                    } else {
+                        if (sub_num % 2 == 0) {
+                        } else {
+                            result.add("-");
+                        }
+                        i = i + add_num + sub_num;
+                        add_num = sub_num = 0;
+                        break;
+                    }
+                    j++;
+                }
+            } else {
+                if (string.get(i).equals("(") || string.get(i).equals("*") || string.get(i).equals("/") || string.get(i).equals("%")) {
+                    result.add(string.get(i));
+                    int j = i + 1;
+                    while (j < length) {
+                        if (string.get(j).equals("+")) {
+                            add_num++;
+                        } else if (string.get(j).equals("-")) {
+                            sub_num++;
+                        } else {
+                            if (sub_num + add_num == 0) {
+                                i++;
+                                break;
+                            }
+                            if (sub_num % 2 == 0) {
+                                // 加号去掉
+                            } else {
+                                result.add("-");
+                            }
+                            i = i + add_num + sub_num + 1;
+                            add_num = sub_num = 0;
+                            break;
+                        }
+                        j++;
+                    }
+                } else if (string.get(i).equals(")")) {
+                    result.add(")");
+                    int j = i + 1;
+                    while (j < length) {
+                        if (string.get(j).equals("*") || string.get(j).equals("/") || string.get(j).equals("%")) {
+                            i++;
+                            break;
+                        }
+                        if (string.get(j).equals("+")) {
+                            add_num++;
+                        } else if (string.get(j).equals("-")) {
+                            sub_num++;
+                        } else {
+                            if (sub_num + add_num == 0) {
+                                i++;
+                                break;
+                            }
+                            if (sub_num % 2 == 0) {
+                                result.add("+");
+                            } else {
+                                result.add("-");
+                            }
+                            i = i + add_num + sub_num + 1;
+                            add_num = sub_num = 0;
+                            break;
+                        }
+                        j++;
+                    }
+                    if (j == length) {
+                        i++;
+                    }
+                } else {
+                    // result.append(string.charAt(i));
+                    //i++;
+                    result.add(string.get(i));
+                    int j = i + 1;
+                    while (j < length) {
+                        if (string.get(j).equals("+")) {
+                            add_num++;
+                        } else if (string.get(j).equals("-")) {
+                            sub_num++;
+                        } else {
+                            if (sub_num + add_num == 0) {
+                                i++;
+                                break;
+                            }
+                            if (sub_num % 2 == 0) {
+                                // 加号去掉
+                                result.add("+");
+                            } else {
+                                result.add("-");
+                            }
+                            i = i + add_num + sub_num + 1;
+                            add_num = sub_num = 0;
+                            break;
+                        }
+
+                        j++;
+                    }
+                    if (j == length) {
+                        i++;
                     }
                 }
             }
+
         }
-        return result.toString();
+//        for (int i = 0; i < result.length(); i++) {
+//            if (result.charAt(i) == '(') {
+//                // 如果出现了(-(这种情况，需要将其替换为(0-(，因为现在设计的运算方法会将-也是别为一个单独的数字
+//                if (i + 2 < length) {
+//                    if (result.charAt(i + 1) == '-' && result.charAt(i + 2) == '(') {
+//                        result.insert(i + 1, 0);
+//
+//                    }
+//                }
+//            }
+//        }
+        return result;
     }
 
     @Override
     public Void visitStmt(testParser.StmtContext ctx) {
-        System.out.print("ret i32 ");
         visit(ctx.exp());
         // System.out.println("数组的结果是：");
         String string = "";
+        ArrayList<String> array = new ArrayList<>();
         for (int i = 0; i < arrayList.size(); i++) {
             // System.out.println("第" + i + "项:" + "类型是 " + arrayList.get(i).judge + ",值是 " + arrayList.get(i).value);
+            array.add(arrayList.get(i).value);
             string += arrayList.get(i).value;
         }
         // System.out.println(string);
+        // test是简化后的字符串
         String test = analyseString(string);
-        // System.out.println("result = " + test);
-        int result = (int) Calculator.conversion(test);
-        System.out.print(result);
-        return null;
+        String true_result = "";
+        // System.out.println("简化后的计算表达式为 = " + test);
+        OperatorPrecedenceParse o = new OperatorPrecedenceParse();
+        // true_result是通过寄存器计算出来的寄存器表达式，是LLVM IR指令中的寄存器的表达式
+        // 如果只有一个数字，直接返回即可
+        array = analyseString(array);
+        if (array.size() == 1) {
+            System.out.print("ret i32 " + array.get(0));
+            return null;
+        } else {
+            true_result = o.calculator(array);
+            // result是通过计算算出来的表达式的计算值，不是LLVM IR指令
+            // int result = (int) Calculator.conversion(test);
+            // System.out.print(result);
+            System.out.print("ret i32 " + true_result);
+            return null;
+        }
     }
 
     @Override

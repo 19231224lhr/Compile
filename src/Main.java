@@ -41,7 +41,7 @@ public class Main {
         }
 
 //        String input = "int main() {\n" +
-//                "    return -+(+-((-+(-+(1)))));\n" +
+//                "    return - - - - -+- - - - +-+- - - -+- - - - -(-0x010);\n" +
 //                "}";
         CharStream inputStream = CharStreams.fromString(input.toString());
         testLexer lexer = new testLexer(inputStream);
