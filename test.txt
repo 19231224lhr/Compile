@@ -1,10 +1,17 @@
-int main() {
-    const int Nqn7m1 = 010;
-    int yiersan = 456;
-    int mAgIc_NuMbEr;
-    mAgIc_NuMbEr = 8456;
-    int a1a11a11 = (mAgIc_NuMbEr - yiersan) / 1000 - Nqn7m1, _CHAOS_TOKEN;
-    _CHAOS_TOKEN = 2;
-    a1a11a11 = a1a11a11 + _CHAOS_TOKEN;
-    return a1a11a11 - _CHAOS_TOKEN + 000;
+int main () {
+    int a;
+    int b;
+    int c;
+    int d;
+    int result;
+    a = 5;
+    b = 5;
+    c = 1;
+    d = -2;
+    result = (d * 1 / 2)  + (a - b) - -(c + 3) % 2;
+    putint(result);
+    result = ((d % 2 + 67) + -(a - b) - -((c + 2) % 2));
+    result = result + 3;
+    putint(result);
+    return 0;
 }
