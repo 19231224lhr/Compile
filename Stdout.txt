@@ -1,0 +1,57 @@
+define dso_local i32 @f() {
+	ret i32 0
+}
+
+define dso_local i32 @g() {
+	ret i32 1
+}
+
+define dso_local i32 @main(){
+	%x4 = call i32 @f()
+	%x5 = icmp ne i32 %x4, 0
+	br i1 %x5, label %x6, label %x3
+
+x6:
+	%x7 = call i32 @g()
+	%x8 = icmp ne i32 %x7, 0
+	br i1 %x8, label %x0, label %x3
+
+x3:
+	%x11 = call i32 @f()
+	%x12 = icmp eq i32 0, %x11
+	%x13 = zext i1 %x12 to i32
+	%x14 = icmp ne i32 %x13, 0
+	br i1 %x14, label %x15, label %x10
+
+x15:
+	%x16 = call i32 @g()
+	%x17 = icmp eq i32 0, %x16
+	%x18 = zext i1 %x17 to i32
+	%x19 = icmp ne i32 %x18, 0
+	br i1 %x19, label %x0, label %x10
+
+x10:
+	%x21 = call i32 @f()
+	%x22 = icmp eq i32 0, %x21
+	%x23 = zext i1 %x22 to i32
+	%x24 = icmp ne i32 %x23, 0
+	br i1 %x24, label %x25, label %x1
+
+x25:
+	%x26 = call i32 @g()
+	%x27 = icmp ne i32 %x26, 0
+	br i1 %x27,label %x0, label %x1
+
+x0:
+	ret i32 0
+	br label %x2
+
+x1:
+	ret i32 1
+	br label %x2
+
+x2:
+	ret i32 0
+}
+
+

@@ -1,0 +1,15 @@
+int f() {
+  return 0;
+}
+
+int g() {
+  return 1;
+}
+
+int main () {
+    if(f() && g() || !f() && !g() || !f() && g()){
+        return 0;
+    }else{
+        return 1;
+    }
+}
