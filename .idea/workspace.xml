@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Compile" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8010f7cd-2eed-431d-9479-392d0fe89a52" name="默认变更列表" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Compile" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="21RpwJaRKW7OTXxXDguTIVeJqGZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Compile" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="工件" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lhr4108\Desktop\大三上学习资料\编译原理\Test\Compile" />
+      <recent name="C:\Users\lhr4108\Desktop\大三上学习资料\编译原理\Test" />
+      <recent name="C:\Users\lhr4108\Desktop\大三上学习资料\编译原理\Test\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lhr4108\Desktop\大三上学习资料\编译原理\Test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/lhr4108/Desktop/大三上学习资料/编译原理/Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="Gradle.C:/Users/lhr4108/Desktop/大三上学习资料/编译原理/Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="8010f7cd-2eed-431d-9479-392d0fe89a52" name="默认变更列表" comment="" />
+      <created>1637913992884</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637913992884</updated>
+      <workItem from="1637913994308" duration="19623000" />
+      <workItem from="1638013043738" duration="577000" />
+      <workItem from="1638018182950" duration="7568000" />
+      <workItem from="1638029400132" duration="2076000" />
+      <workItem from="1638068750309" duration="10851000" />
+      <workItem from="1638117024842" duration="47000" />
+      <workItem from="1638117087984" duration="48000" />
+      <workItem from="1638176536563" duration="171000" />
+      <workItem from="1638179242901" duration="14522000" />
+      <workItem from="1638194924000" duration="1172000" />
+      <workItem from="1638253410048" duration="17960000" />
+      <workItem from="1638332565480" duration="4242000" />
+      <workItem from="1638346095156" duration="17864000" />
+      <workItem from="1638374986682" duration="2879000" />
+      <workItem from="1638403963317" duration="27800000" />
+      <workItem from="1638458555848" duration="5709000" />
+      <workItem from="1638497480612" duration="688000" />
+      <workItem from="1638498194588" duration="15863000" />
+      <workItem from="1638535830699" duration="15763000" />
+      <workItem from="1638581419030" duration="10201000" />
+      <workItem from="1638603341912" duration="30580000" />
+      <workItem from="1638669613897" duration="22441000" />
+      <workItem from="1638696855834" duration="1592000" />
+      <workItem from="1638699557320" duration="553000" />
+      <workItem from="1638721802477" duration="2066000" />
+      <workItem from="1638755557034" duration="76000" />
+      <workItem from="1638767211748" duration="9342000" />
+      <workItem from="1638786037697" duration="19907000" />
+      <workItem from="1638840128710" duration="28246000" />
+      <workItem from="1638886397017" duration="10171000" />
+      <workItem from="1638927897426" duration="7982000" />
+      <workItem from="1638941643606" duration="7781000" />
+      <workItem from="1638951700503" duration="162000" />
+      <workItem from="1638965779497" duration="4132000" />
+      <workItem from="1638972464892" duration="8129000" />
+      <workItem from="1639009363940" duration="18636000" />
+      <workItem from="1639036368543" duration="6380000" />
+      <workItem from="1639046533056" duration="20070000" />
+      <workItem from="1639095416259" duration="10719000" />
+      <workItem from="1639110344455" duration="16146000" />
+      <workItem from="1639136609648" duration="21549000" />
+      <workItem from="1639182798488" duration="3129000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Visitor.java</url>
+          <line>2767</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="SymbolTable" memberName="Table" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="symbolTable.Table" language="JAVA" />
+        <watch expression="this.Layer" language="JAVA" />
+        <watch expression="GName" language="JAVA" />
+        <watch expression="ArrayName" language="JAVA" />
+        <watch expression="gloableVar.gloableArray" language="JAVA" />
+        <watch expression="arrayTable" language="JAVA" />
+        <watch expression="param" language="JAVA" />
+        <watch expression="paramString" language="JAVA" />
+        <watch expression="functionList.functionArrayList" language="JAVA" />
+        <watch expression="isWhileReturn" language="JAVA" />
+        <watch expression="ctx.IDENT()" language="JAVA" />
+        <watch expression="this.Register" language="JAVA" />
+        <watch expression="Result.toString()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
